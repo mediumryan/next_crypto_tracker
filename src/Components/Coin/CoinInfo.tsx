@@ -47,7 +47,7 @@ export default function CoinInfo({ data }: any) {
   const percentage24h = data?.market_data?.price_change_percentage_24h;
 
   return (
-    <div className="flex flex-col justify-center py-4">
+    <div className="flex flex-col justify-center py-4 md:basis-1/2 md:p-12">
       {/* name */}
       <div className="flex items-center my-4">
         <Image

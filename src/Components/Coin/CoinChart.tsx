@@ -2,6 +2,7 @@
 
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import {
   AreaChart,
   Area,
@@ -13,6 +14,8 @@ import {
 } from 'recharts';
 
 function CoinChart({ coinId }: { coinId: string }) {
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+
   const [chartData, setChartData] = useState([]);
 
   const get7days = async () => {
@@ -32,15 +35,16 @@ function CoinChart({ coinId }: { coinId: string }) {
   }, []);
 
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer
+      width={isMobile ? '100%' : '50%'}
+      height={isMobile ? '100%' : '50%'}
+    >
       <AreaChart
-        width={400}
-        height={700}
         data={chartData}
         margin={{
-          top: 10,
+          top: 50,
           right: 30,
-          left: 0,
+          left: 20,
           bottom: 0,
         }}
       >

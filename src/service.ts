@@ -28,6 +28,16 @@ export type MarketsCoinType = {
   total_supply: number; // 총 공급량
 };
 
+export type SearchResultType = {
+  api_symbol: string;
+  id: string;
+  large: string;
+  market_cap_rank: number;
+  name: string;
+  symbol: string;
+  thumb: string;
+};
+
 export async function getMarkets(): Promise<MarketsCoinType[]> {
   const res = await fetch(
     `${BASE_URL}coins/markets?vs_currency=jpy&order=market_cap_desc&per_page=100&page=1`
@@ -47,6 +57,14 @@ export async function get7days(coinId: string): Promise<any> {
     `${BASE_URL}coins/${coinId}/market_chart?vs_currency=jpy&days=365`,
     { cache: 'no-store' }
   );
+  const result = await res.json();
+  return result;
+}
+
+export async function getSearch(query: string): Promise<any> {
+  const res = await fetch(`${BASE_URL}search?query=${query}`, {
+    cache: 'no-store',
+  });
   const result = await res.json();
   return result;
 }

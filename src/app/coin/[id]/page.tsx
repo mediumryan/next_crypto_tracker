@@ -29,7 +29,7 @@ export default function CoinPage({ params }: CoinPageProps) {
   }, []);
 
   return (
-    <div className="flex flex-col items-center h-[90vh]">
+    <div className="flex flex-col md:flex-row items-center h-[90vh] md:px-12">
       <CoinInfo data={data} />
       <CoinChart coinId={coinId} />
     </div>

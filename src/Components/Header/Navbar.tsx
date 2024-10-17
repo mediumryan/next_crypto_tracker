@@ -9,7 +9,7 @@ const listStyle =
 
 export default function Navbar() {
   return (
-    <header className="flex items-center justify-between py-1 px-4">
+    <header className="flex items-center justify-between py-1 px-4 md:mt-2">
       {/* back to page */}
       {/* title */}
       <Link href="/" className="flex items-center font-bold">
