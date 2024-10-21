@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import { MdOutlineLightMode, MdOutlineNightlight } from 'react-icons/md';
 
-const iconStyle = 'w-6 h-6';
+const iconStyle =
+  'w-6 h-6 cursor-pointer hover:animate-spin hover:duration-3000';
 
 export default function ToggleButton() {
   const [isDark, setIsDark] = useState(false);

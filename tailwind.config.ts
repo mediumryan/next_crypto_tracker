@@ -10,6 +10,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animationDuration: {
+        '3000': '3s',
+      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
